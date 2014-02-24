@@ -4,6 +4,10 @@
     },
     "logger": {
         "filename": "logs/run.log",
-        "level": "silly"
+        "level": "verbose"
+    },
+    "mongo": {
+        "url": "mongodb://localhost/vision"
     }
+
 }

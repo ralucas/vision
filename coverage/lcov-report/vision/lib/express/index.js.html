@@ -195,20 +195,20 @@
     </style>
 </head>
 <body>
-<div class="header high">
+<div class="header low">
     <h1>Code coverage report for <span class="entity">vision/lib/express/index.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">10% <small>(1 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">100% <small>(1 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 1)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">10% <small>(1 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -245,7 +245,23 @@
 27
 28
 29
-30</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -254,61 +270,93 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Application dependencies
 var express = require('express'),
     http = require('http'),
     config = require('../configuration'),
+    db = require('../db'),
     heartbeat = require('../routes/heartbeat'),
+    project = require('../routes/project'),
     notFound = require('../middleware/notFound'),
     app = express();
 &nbsp;
 // Sets the port with nconf configuration call
-app.set('port', config.get('express:port'));
+<span class="cstat-no" title="statement not covered" >app.set('port', config.get('express:port'));</span>
 &nbsp;
-// Gets the heartbeat.js route
-app.get('/heartbeat', heartbeat.index);
+/*
+* Middleware
+*/
+&nbsp;
+// Middleware provided by express for parsing forms or json
+<span class="cstat-no" title="statement not covered" >app.use( express.bodyParser() );</span>
 &nbsp;
 // Middleware provided by express for logging
-app.use(express.logger({
+<span class="cstat-no" title="statement not covered" >app.use(express.logger({</span>
     immediate: true,
     format: 'dev'
 }));
 &nbsp;
 // Middleware for 404 Not Found
-app.use(notFound.index);
+<span class="cstat-no" title="statement not covered" >app.use(notFound.index);</span>
+&nbsp;
+/*
+* Routing
+*/
+&nbsp;
+// Gets the heartbeat.js route
+<span class="cstat-no" title="statement not covered" >app.get('/heartbeat', heartbeat.index);</span>
+&nbsp;
+// Post to the project route calls post method to api
+<span class="cstat-no" title="statement not covered" >app.post('/project', project.post);</span>
 &nbsp;
 // Creates the server and listens
-http.createServer(app).listen(app.get('port'), function(){
-    console.log('Server listening on port: ' + app.get('port'));
+<span class="cstat-no" title="statement not covered" >http.createServer(app).listen(app.get('port'), <span class="fstat-no" title="function not covered" >function(){</span></span>
+<span class="cstat-no" title="statement not covered" >    console.log('Server listening on port: ' + app.get('port'));</span>
 });
 &nbsp;
-module.exports = app;
+<span class="cstat-no" title="statement not covered" >module.exports = app;</span>
 &nbsp;</pre></td></tr>
 </table></pre>
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 23 2014 12:53:14 GMT-0700 (MST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 23 2014 18:38:22 GMT-0700 (MST)</div>
 </div>
 
 <script src="../../../prettify.js"></script>
