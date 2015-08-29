@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-mocha-istanbul');
     grunt.loadNpmTasks('grunt-cafe-mocha');
     grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-contrib-handlebars');
 
     grunt.initConfig({
         
@@ -44,6 +45,17 @@ module.exports = function(grunt) {
                     coverage: true
                 }
             }
+        },
+
+        handlebars: {
+          compile: {
+            options: {
+              namespace: "visiontemplates"
+            },
+            files: {
+              'public/components/vision/templates.js': ['templates/*.hbs']
+            }
+          }
         }
 
     });

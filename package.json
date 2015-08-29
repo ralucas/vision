@@ -22,6 +22,7 @@
     "chai": "^3.2.0",
     "grunt": "~0.4.2",
     "grunt-cafe-mocha": "~0.1.11",
+    "grunt-contrib-handlebars": "^0.10.2",
     "grunt-env": "~0.4.1",
     "grunt-mocha-istanbul": "~0.1.4",
     "mocha": "~1.17.1",

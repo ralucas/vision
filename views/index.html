@@ -1,0 +1,40 @@
+{{#if user}}
+  <p class="navbar-text">Welcome {{user}},
+    <a href="/logout" class="navbar-link">
+      Click Here to Sign Out
+    </a>
+  </p>
+{{else}}
+  <a href="/auth/github">
+    <i class="fa fa-github" id="login">
+  </a>
+{{/if}}
+
+{{#if user}}
+  <div class="small-3 columns">
+    <h2>Projects</h2>
+    <ul id="projects-list" class="nav nav-list"></ul>
+    <br/>
+    <a id="showForm" class="button button-large" href="#add">Add Project</a>
+  </div>
+  <div class="small-3 columns">
+    <h2>Repositories</h2>
+    <ul id="repository-list" class="nav inline nav-list"></ul>
+  </div>
+  <div class="small-3 columns">
+    <h2>Commits</h2>
+    <ul id="commits-list" class="media-list"></ul>
+  </div>
+  <div class="small-3 columns">
+    <h2>Issues</h2>
+    <ul id="issues-list" class="media-list"></ul>
+  </div>
+{{else}}
+  <div class="small-12 columns">
+    <div class="hero-unit">
+      <h1>vision</h1>
+      <lead>a real-time multiple repository dashboard for GitHub issues and commits</lead>
+      <p><small>In order to use vision; please login to a valid GitHub Account</small></p>
+    </div>
+  </div>
+{{/if}}

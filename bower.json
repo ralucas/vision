@@ -1,0 +1,12 @@
+{
+  "name": "vision",
+  "version": "0.0.1",
+  "dependencies": {
+    "json2": "*",
+    "lodash": "~3.10.1",
+    "backbone": "~1.2.2",
+    "handlebars": "~3.0.3",
+    "foundation": "~5.5.2",
+    "jquery": "~2.1.4"
+  }
+}
