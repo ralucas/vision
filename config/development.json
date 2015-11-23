@@ -1,6 +1,6 @@
 {
     "express": {
-        "port": 3000
+        "port": 4444 
     },
     "logger": {
         "filename": "logs/run.log",

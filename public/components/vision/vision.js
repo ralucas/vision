@@ -13,22 +13,5 @@ $(function() {
   app.start();
 });
 
-Vision.Router = Backbone.Router.extend({
-  projectListView: '',
+Backbone.View.prototype.event_aggregator = _.extend({}, Backbone.Events);
 
-  routes: {
-    '': 'index'
-  },
-
-  initialize: function() {
-    this.project();
-  },
-
-  project: function() {
-    this.projectListView = new Vision.ProjectListView();
-  },
-
-  index: function() {
-    this.projectListView.render();
-  }
-})
